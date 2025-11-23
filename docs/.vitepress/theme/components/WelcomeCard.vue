@@ -126,8 +126,7 @@ const noticeContent: NoticeContent = {
 // 获取IP数据
 const fetchIPData = async (): Promise<void> => {
   try {
-    const API_URL =
-      "https://api.nsmao.net/api/ip/query?key=K7ti7rB7FYzOnxqeE4isG8ueRQ";  //替换实际自己的API_KEY
+    const API_URL = "https://api.pearktrue.cn/api/ip/high/";
 
     const response = await fetch(API_URL);
 
@@ -136,9 +135,20 @@ const fetchIPData = async (): Promise<void> => {
     }
 
     const result = await response.json();
-
-    if (result.code === 200 && result.data) {
-      ipData.value = result.data;
+    
+    // 处理新API返回的数据结构
+    if (result && result.code === 200 && result.data) {
+      const data = result.data;
+      ipData.value = {
+        ip: result.ip || "",
+        country: "", // 新API不返回国家信息，默认为空
+        prov: data.province || "",
+        city: data.city ? data.city.replace("市", "") : "", // 去掉"市"后缀
+        district: data.district ? data.district : "",
+        adcode: 0,
+        lat: data.location ? data.location.lat : 0,
+        lng: data.location ? data.location.lng : 0
+      };
       // 计算距离
       distance.value = calculateDistance();
     } else {
@@ -150,29 +160,22 @@ const fetchIPData = async (): Promise<void> => {
   }
 };
 
-// 获取天气数据
+// 获取天气数据 - 由于新API不提供天气数据，暂时禁用
 const fetchWeatherData = async (): Promise<void> => {
+  // 暂时禁用天气数据获取，因为新的IP查询API不包含天气信息
+  // 如需天气功能，需要另外集成天气API
+  weatherData.value = null;
+  
+  /*
+  // 如果后续需要天气功能，可以使用其他天气API，例如：
   try {
-    const API_URL =
-      "https://api.nsmao.net/api/weather/query?key=K7ti7rB7FYzOnxqeE4isG8ueRQ&adcode=";  //替换实际自己的API_KEY
-
-    const response = await fetch(API_URL);
-
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
-
-    const result = await response.json();
-
-    if (result.code === 200 && result.data) {
-      weatherData.value = result.data;
-    } else {
-      throw new Error(result.msg || "天气数据获取失败");
-    }
+    const API_URL = "https://api.weatherapi.com/v1/current.json?key=YOUR_API_KEY&q=";
+    // 这里需要替换为实际的天气API和参数
   } catch (error) {
     console.error("获取天气数据失败:", error);
     weatherData.value = null;
   }
+  */
 };
 
 // 组件挂载时获取IP和天气数据
@@ -203,13 +206,13 @@ const getLocationText = (): string => {
   return "未知地区";
 };
 
-// 计算距离（广州经纬度：23.1216, 113.3372）
+// 计算距离（广州经纬度：23.12911033630371, 113.2643814086914）
 const calculateDistance = (): string => {
   if (!ipData.value || !ipData.value.lat || !ipData.value.lng) return "";
 
   // 替换自己实际经纬度，可以通过 https://www.lddgo.net/convert/position 百度地图来定位自己的位置
-  const guangzhouLat = 23.12;
-  const guangzhouLng = 113.34;
+  const guangzhouLat = 23.1;
+  const guangzhouLng = 113.3;
 
   const userLat = ipData.value.lat;
   const userLng = ipData.value.lng;

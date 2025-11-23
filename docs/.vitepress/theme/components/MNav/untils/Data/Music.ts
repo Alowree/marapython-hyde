@@ -18,5 +18,11 @@ export const Music = {
       desc: "高颜值的第三方网易云播放器，支持 Windows / macOS / Linux",
       link: "https://music.naday.com/",
     },
+    {
+      icon: "https://api.hypcvgm.top/NeteaseMiniPlayer/nmp.png",
+      title: "网易云音乐迷你播放器",
+      desc: "基于 NeteaseCloudMusicApi 的轻量级 CDN 可插入式音乐播放器 UI 组件库",
+      link: "https://docs.nmp.hypcvgm.top/",
+    },
   ],
 };

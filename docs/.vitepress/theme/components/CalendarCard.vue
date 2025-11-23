@@ -1,3 +1,4 @@
+<!-- 日历组件 -->
 <template>
   <TkPageCard>
     <div class="card-widget" id="card-widget-calendar">
@@ -66,8 +67,28 @@ import { ref, onMounted, computed } from "vue";
 // 星期几中文映射
 const weekDays = ["周日", "周一", "周二", "周三", "周四", "周五", "周六"];
 
+// 获取指定时区的当前时间
+const getTimeInTimeZone = (timeZone = 'Asia/Shanghai') => {
+  try {
+    // 处理SSR环境
+    if (typeof window === 'undefined') {
+      // 服务器环境：使用UTC时间并转换为北京时间
+      const now = new Date();
+      return new Date(now.getTime() + (8 * 60) * 60000);
+    }
+    
+    // 客户端环境：优先使用国际化API获取指定时区的时间
+    const now = new Date();
+    const timeZoneOffset = timeZone === 'Asia/Shanghai' ? 8 : 0; // 简化处理，直接使用北京时间
+    // 获取当前UTC时间并加上时区偏移
+    return new Date(now.getTime() + (timeZoneOffset * 60 - now.getTimezoneOffset()) * 60000);
+  } catch (e) {
+    return new Date();
+  }
+};
+
 // 当前日期
-const today = ref(new Date());
+const today = ref(getTimeInTimeZone());
 
 // 生成当前月份的日历数据
 const calendarWeeks = computed(() => {
@@ -226,14 +247,27 @@ const lunarDays = [
 
 // 转换为农历
 const getLunarDate = (date) => {
-  const year = date.getFullYear();
-  const month = date.getMonth() + 1;
-  const day = date.getDate();
+  // 确保使用北京时间计算农历
+  let beijingDate;
+  if (typeof window === 'undefined') {
+    // SSR环境：使用传入的日期并转换为北京时间
+    beijingDate = new Date(date.getTime() + (8 * 60 - date.getTimezoneOffset()) * 60000);
+  } else {
+    // 客户端环境：使用统一的时间获取函数
+    beijingDate = getTimeInTimeZone('Asia/Shanghai');
+  }
+  
+  const year = beijingDate.getFullYear();
+  const month = beijingDate.getMonth() + 1;
+  const day = beijingDate.getDate();
+
+  
 
   let springStart = new Date(2000, 1, 4); // 2000年春节是2月4日
   if (year > 2000) {
     // 简单计算春节日期，实际应用中可能需要更精确的算法
-    springStart = new Date(year, 1, 4 + Math.floor((year - 2000) * 0.2422));
+    springStart = getTimeInTimeZone('Asia/Shanghai');
+    springStart.setFullYear(year, 1, 4 + Math.floor((year - 2000) * 0.2422));
   }
 
   let lunarYear = year;
@@ -241,8 +275,11 @@ const getLunarDate = (date) => {
   let lunarMonthIdx = 0;
   let lunarDayIdx = 0;
 
-  // 简化的农历计算，实际应用可能需要更复杂的算法
-  const offset = Math.floor((date - new Date(year, 0, 0)) / 86400000);
+  // 使用北京时间计算今年的第几天
+  const yearStart = getTimeInTimeZone('Asia/Shanghai');
+  yearStart.setFullYear(year, 0, 0);
+  const offset = Math.floor((beijingDate - yearStart) / 86400000);
+  
   let days = 0;
   let i = 0;
 
@@ -261,11 +298,13 @@ const getLunarDate = (date) => {
   const zhiIndex = (year - 3) % 12;
   const lunarYearStr = `${gan[ganIndex]}${zhi[zhiIndex]}${animals[zhiIndex]}年`;
 
-  return {
+  const result = {
     lunarYear: lunarYearStr,
     lunarMonth: lunarMonths[lunarMonthIdx],
     lunarDay: lunarDays[lunarDayIdx],
   };
+
+  return result;
 };
 
 // 响应式农历数据
@@ -276,14 +315,23 @@ const lunarDay = computed(() => lunarDate.value.lunarDay);
 
 // 每天更新一次日历
 onMounted(() => {
+  // 立即执行一次，确保组件加载时显示正确时间
+  today.value = getTimeInTimeZone();
+  
   // 检查是否需要更新（跨天）
   const checkUpdate = () => {
-    const now = new Date();
-    if (now.toDateString() !== today.value.toDateString()) {
-      today.value = now;
+    const newTime = getTimeInTimeZone();
+    const currentTimeString = newTime.toDateString();
+    const todayString = today.value.toDateString();
+    
+    if (currentTimeString !== todayString) {
+      today.value = newTime;
     }
   };
 
+  // 立即执行一次
+  checkUpdate();
+  
   // 每分钟检查一次
   setInterval(checkUpdate, 60000);
 });

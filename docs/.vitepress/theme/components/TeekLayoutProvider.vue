@@ -25,6 +25,7 @@ import Twikoo from "./Twikoo/Twikoo.vue";
 import ScrollToComment from "./ScrollToComment.vue";
 import CalendarCard from "./CalendarCard.vue";
 import ScheduleCard from "./ScheduleCard.vue";
+import NeteaseMusicPlayer from "./NeteaseMusicPlayer.vue";
 
 const ns = "layout-provider";
 const { frontmatter } = useData();
@@ -153,6 +154,11 @@ const handleConfigSwitch = (config: TeekConfig, style: string) => {
     <!-- 右上角时钟组件 -->
     <template #nav-bar-content-after>
       <Clock />
+    </template>
+
+    <!-- 全局网易云音乐播放器组件 -->
+    <template #layout-bottom>
+      <NeteaseMusicPlayer />
     </template>
 
     <!-- 文章末尾版权说明 -->

@@ -54,5 +54,11 @@ export const BuildPackage = {
       desc: "基于 Rust 的 JavaScript 打包工具",
       link: "https://rolldown.rs/",
     },
+    {
+      icon: "https://ppofficial.netlify.app/pplogo.png",
+      title: "PakePlus",
+      desc: "何必是网站，秒变桌面应用和手机应用",
+      link: "https://ppofficial.netlify.app/zh/",
+    },
   ],
 };
