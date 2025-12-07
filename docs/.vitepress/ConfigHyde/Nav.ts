@@ -17,11 +17,7 @@ function getNav(text: string, svgPath: string | null) {
 
 export const Nav: DefaultTheme.NavItem[] = [
   {
-    text: "🏡首页",
-    items: [
-      { text: "首页", link: "/" },
-      { text: "起始页", link: "https://hyde.seasir.top/" },
-    ],
+    text: "🏡首页", link: "/",
   },
   {
     text: "📖笔记专栏",
