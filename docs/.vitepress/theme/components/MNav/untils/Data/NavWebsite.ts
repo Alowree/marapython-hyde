@@ -46,7 +46,19 @@ export const NavWebsite = {
       icon: "https://4kso.com/uploads/2025/10/19/049f918e7f474b7ab889cd0d12980941.ico",
       title: "4KSO",
       desc: "老子只看4K",
-      link: "https://4kso.com//",
+      link: "https://4kso.com/",
+    },
+    {
+      icon: "https://doc.sun-panel.top/favicon.ico",
+      title: "Sun-Panel",
+      desc: "一个NAS、服务器导航面板、简易docker管理器、Homepage、浏览器首页",
+      link: "https://doc.sun-panel.top/zh_cn/",
+    },
+    {
+      icon: "https://dh.leti.ltd/_next/image?url=%2Fassets%2Fimages%2Falogo.png&w=48&q=75",
+      title: "NavSphere",
+      desc: "一个基于 Github 存储的网址导航程序支持部署至cloudflare，一键部署至 Vercel，数据存储在 Github，零成本搭建一个网站导航！",
+      link: "https://dh.leti.ltd/",
     },
   ],
 };

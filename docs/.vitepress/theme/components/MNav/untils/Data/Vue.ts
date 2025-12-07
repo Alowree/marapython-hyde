@@ -73,12 +73,6 @@ export const Vue = {
       link: "https://devtools.vuejs.org/",
     },
     {
-      icon: "https://ppofficial.pages.dev/pplogo.png",
-      title: "PakePlus",
-      desc: "何必是网站，秒变桌面应用和手机应用",
-      link: "https://ppofficial.pages.dev/",
-    },
-    {
       icon: "https://uiverse.io/favicon-32x32.png",
       title: "uiverse",
       desc: "最大的开源 UI 库",

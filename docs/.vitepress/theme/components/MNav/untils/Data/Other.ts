@@ -144,5 +144,11 @@ export const Other = {
       desc: "免费在线生成在职证明|工资证明|离职证明|公章制作",
       link: "https://gitee.com/nianbroken/Firework_Simulator",
     },
+    {
+      icon: "https://n.showmsg.cn/logo.svg",
+      title: "纸条",
+      desc: "记录瞬间，安心分享，自动销毁",
+      link: "https://n.showmsg.cn/",
+    },
   ],
 };

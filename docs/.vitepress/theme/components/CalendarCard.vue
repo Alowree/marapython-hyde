@@ -70,18 +70,25 @@ const weekDays = ["周日", "周一", "周二", "周三", "周四", "周五", "�
 // 获取指定时区的当前时间
 const getTimeInTimeZone = (timeZone = 'Asia/Shanghai') => {
   try {
+    const now = new Date();
+    
     // 处理SSR环境
     if (typeof window === 'undefined') {
-      // 服务器环境：使用UTC时间并转换为北京时间
-      const now = new Date();
-      return new Date(now.getTime() + (8 * 60) * 60000);
+      // 服务器环境：直接使用当前时间，Date对象在服务器端应已是正确的UTC时间
+      return now;
     }
     
-    // 客户端环境：优先使用国际化API获取指定时区的时间
-    const now = new Date();
-    const timeZoneOffset = timeZone === 'Asia/Shanghai' ? 8 : 0; // 简化处理，直接使用北京时间
-    // 获取当前UTC时间并加上时区偏移
-    return new Date(now.getTime() + (timeZoneOffset * 60 - now.getTimezoneOffset()) * 60000);
+    // 客户端环境：使用简单的时区转换方法
+    // 获取UTC时间
+    const utcTime = new Date(now.getTime() + (now.getTimezoneOffset() * 60000));
+    
+    // 如果是北京时间，不进行额外调整，直接使用本地时间
+    // 因为如果用户已在北京时区，本地时间就是正确的时间
+    if (timeZone === 'Asia/Shanghai') {
+      return now;
+    }
+    
+    return utcTime;
   } catch (e) {
     return new Date();
   }
@@ -247,27 +254,15 @@ const lunarDays = [
 
 // 转换为农历
 const getLunarDate = (date) => {
-  // 确保使用北京时间计算农历
-  let beijingDate;
-  if (typeof window === 'undefined') {
-    // SSR环境：使用传入的日期并转换为北京时间
-    beijingDate = new Date(date.getTime() + (8 * 60 - date.getTimezoneOffset()) * 60000);
-  } else {
-    // 客户端环境：使用统一的时间获取函数
-    beijingDate = getTimeInTimeZone('Asia/Shanghai');
-  }
-  
-  const year = beijingDate.getFullYear();
-  const month = beijingDate.getMonth() + 1;
-  const day = beijingDate.getDate();
-
-  
+  // 直接使用传入的日期，不再进行时区转换，因为日期已经正确
+  const year = date.getFullYear();
+  const month = date.getMonth() + 1;
+  const day = date.getDate();
 
   let springStart = new Date(2000, 1, 4); // 2000年春节是2月4日
   if (year > 2000) {
     // 简单计算春节日期，实际应用中可能需要更精确的算法
-    springStart = getTimeInTimeZone('Asia/Shanghai');
-    springStart.setFullYear(year, 1, 4 + Math.floor((year - 2000) * 0.2422));
+    springStart = new Date(year, 1, 4 + Math.floor((year - 2000) * 0.2422));
   }
 
   let lunarYear = year;
@@ -275,10 +270,9 @@ const getLunarDate = (date) => {
   let lunarMonthIdx = 0;
   let lunarDayIdx = 0;
 
-  // 使用北京时间计算今年的第几天
-  const yearStart = getTimeInTimeZone('Asia/Shanghai');
-  yearStart.setFullYear(year, 0, 0);
-  const offset = Math.floor((beijingDate - yearStart) / 86400000);
+  // 计算今年的第几天
+  const yearStart = new Date(year, 0, 0);
+  const offset = Math.floor((date - yearStart) / 86400000);
   
   let days = 0;
   let i = 0;

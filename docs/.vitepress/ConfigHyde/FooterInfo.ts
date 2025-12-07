@@ -3,7 +3,7 @@ import { version } from "vitepress-theme-teek/es/version"; // 导入版本号
 
 export const FooterInfo = {
   topMessage: [
-    `<span><img alt="VitePress" src="https://liuyuyang.net/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fanimals.65eaf6e3.webp&w=750&q=75"><span/>`,
+    `<span style="width: 30%;"><img alt="VitePress" src="/home/animals.webp"><span/>`,
 
     `<a target="_blank" href="https://cn.vitejs.dev/" title="本站使用Vite构建服务 Vite"><img alt="Vite" src="https://img.shields.io/badge/zsr-Vite-blue?logo=vite&label=Build"></a>
 
@@ -26,7 +26,7 @@ export const FooterInfo = {
     <a target="_blank" href="https://nginx.org/" title="本站Nginx反向代理服务 Nginx"><img alt="Nginx" src="https://img.shields.io/badge/Nginx-Proxy?logo=Nginx&label=Proxy"></a>`,
   ],
   theme: {
-    name: `Theme By Teek@${version}-2025-10-19`,
+    name: `Theme By Teek@${version}-2025-12-05`,
   },
   bottomMessage: [
     `<script id="LA-DATA-WIDGET" crossorigin="anonymous" charset="UTF-8" src="https://v6-widget.51.la/v6/3MQCwI1AgSSiVg37/quote.js?theme=#1690FF,#539DFD,#539DFD,#539DFD,#FFFFFF,#1690FF,12&f=12"></script>`,

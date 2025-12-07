@@ -40,7 +40,7 @@ export const FooterGroup = [
       },
       {
         name: "站点统计",
-        link: "https://umami.seasir.top/share/rvVBNZWa0sUCN6wG/teek.seasir.top",
+        link: "https://umami.seasir.top/share/9Pa3wB79cHKsoAyT/teek.seasir.top",
       },
       { name: "站点状态", link: "https://status.seasir.top/status/monitor" },
     ],
