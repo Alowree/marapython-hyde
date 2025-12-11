@@ -62,40 +62,26 @@
 
 <script setup>
 import { TkPageCard } from "vitepress-theme-teek";
-import { ref, onMounted, computed } from "vue";
+import { ref, onMounted, onUnmounted, computed } from "vue";
 
 // 星期几中文映射
 const weekDays = ["周日", "周一", "周二", "周三", "周四", "周五", "周六"];
 
-// 获取指定时区的当前时间
-const getTimeInTimeZone = (timeZone = 'Asia/Shanghai') => {
-  try {
-    const now = new Date();
-    
-    // 处理SSR环境
-    if (typeof window === 'undefined') {
-      // 服务器环境：直接使用当前时间，Date对象在服务器端应已是正确的UTC时间
-      return now;
-    }
-    
-    // 客户端环境：使用简单的时区转换方法
-    // 获取UTC时间
-    const utcTime = new Date(now.getTime() + (now.getTimezoneOffset() * 60000));
-    
-    // 如果是北京时间，不进行额外调整，直接使用本地时间
-    // 因为如果用户已在北京时区，本地时间就是正确的时间
-    if (timeZone === 'Asia/Shanghai') {
-      return now;
-    }
-    
-    return utcTime;
-  } catch (e) {
+// 获取当前时间的函数
+const getCurrentTime = () => {
+  // 客户端环境：直接使用本地时间，这会是用户当前时区的时间
+  // 对于中国用户，这通常是北京时间
+  if (typeof window !== 'undefined') {
     return new Date();
   }
+  
+  // 服务器环境：返回一个占位时间
+  // 这个时间会在客户端被立即替换
+  return new Date();
 };
 
-// 当前日期
-const today = ref(getTimeInTimeZone());
+// 当前日期 - 使用一个函数返回，确保每次获取都是最新的
+const today = ref(getCurrentTime());
 
 // 生成当前月份的日历数据
 const calendarWeeks = computed(() => {
@@ -307,27 +293,45 @@ const lunarYear = computed(() => lunarDate.value.lunarYear);
 const lunarMonth = computed(() => lunarDate.value.lunarMonth);
 const lunarDay = computed(() => lunarDate.value.lunarDay);
 
-// 每天更新一次日历
-onMounted(() => {
-  // 立即执行一次，确保组件加载时显示正确时间
-  today.value = getTimeInTimeZone();
+// 更新时间的函数
+const updateTime = () => {
+  const newTime = getCurrentTime();
+  const currentTimeString = newTime.toDateString();
+  const todayString = today.value.toDateString();
   
-  // 检查是否需要更新（跨天）
-  const checkUpdate = () => {
-    const newTime = getTimeInTimeZone();
-    const currentTimeString = newTime.toDateString();
-    const todayString = today.value.toDateString();
-    
-    if (currentTimeString !== todayString) {
-      today.value = newTime;
+  // 检查日期是否变化（跨天）
+  if (currentTimeString !== todayString) {
+    today.value = newTime;
+  } else if (newTime.getHours() !== today.value.getHours() || 
+             newTime.getMinutes() !== today.value.getMinutes()) {
+    // 即使是同一天，也更新时间，确保分钟级别的时间变化能反映
+    today.value = newTime;
+  }
+};
+
+// 组件挂载时初始化和设置更新机制
+onMounted(() => {
+  // 立即更新时间，确保显示正确的当前时间
+  updateTime();
+  
+  // 设置定时器，每分钟检查一次
+  const intervalId = setInterval(updateTime, 60000);
+  
+  // 监听页面可见性变化，当页面重新可见时更新时间
+  // 这解决了用户切换标签页或浏览器后回来时时间不准确的问题
+  const handleVisibilityChange = () => {
+    if (!document.hidden) {
+      updateTime();
     }
   };
-
-  // 立即执行一次
-  checkUpdate();
   
-  // 每分钟检查一次
-  setInterval(checkUpdate, 60000);
+  document.addEventListener('visibilitychange', handleVisibilityChange);
+  
+  // 组件卸载时清理
+  onUnmounted(() => {
+    clearInterval(intervalId);
+    document.removeEventListener('visibilitychange', handleVisibilityChange);
+  });
 });
 </script>
 
