@@ -20,5 +20,11 @@ export const Markdown = {
       desc: "沉浸创作，美由心生，为优雅阅读设计，为优质内容而生",
       link: "https://www.md2wechat.cn/",
     },
+    {
+      icon: "https://bm.md/favicon.ico",
+      title: "微信 bm.md",
+      desc: "一个专业的 Markdown 排版工具，专为内容创作者设计",
+      link: "https://bm.md/",
+    },
   ],
 };

@@ -28,7 +28,7 @@ import { NAV_DATA } from '/.vitepress/theme/components/MNav/untils/data.ts'
 </script>
 
 ::: info 教程
-如果你也想搭建此导航 [点我查看教程](/pages/e01e54)
+如果你也想搭建此导航 [点我查看教程](/Teek/e01e54)
 :::
 
 <MNavLinks v-for="{title, items} in NAV_DATA" :title="title" :items="items"/>

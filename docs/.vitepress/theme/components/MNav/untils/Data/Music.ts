@@ -24,5 +24,11 @@ export const Music = {
       desc: "基于 NeteaseCloudMusicApi 的轻量级 CDN 可插入式音乐播放器 UI 组件库",
       link: "https://docs.nmp.hypcvgm.top/",
     },
+    {
+      icon: "https://musicbox.asxe.vip/images/logo.svg",
+      title: "MusicBox",
+      desc: "一款高颜值、插件化、可深度定制的本地音乐播放器，支持Windows、MacOS、Linux系统",
+      link: "https://docs.nmp.hypcvgm.top/",
+    },
   ],
 };

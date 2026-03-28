@@ -74,5 +74,17 @@ export const Utilities = {
       desc: "一个免费的在线工具集合，持续开发各种好用的工具",
       link: "https://d1tools.com/tools/",
     },
+    {
+      icon: "https://vocalremover.org/favicon.ico",
+      title: "音频切割器",
+      desc: " 能够在线剪切任何音频文件免费编辑器",
+      link: "https://vocalremover.org/zh/cutter",
+    },
+    {
+      icon: "https://pixelswift.site/favicon.ico",
+      title: "pixelswift",
+      desc: " 智能图片压缩器",
+      link: "https://pixelswift.site/zh/compress-image",
+    },
   ]
 }
