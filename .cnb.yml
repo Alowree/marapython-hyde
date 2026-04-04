@@ -32,7 +32,7 @@ main:
       services:
         - docker
         - git-clone-yyds
-    - imports: https://cnb.cool/W3C/Hyde/secret/-/blob/main/env.yml
+    - imports: https://cnb.cool/W3C/Hyde/teek-hyde-secret/-/blob/main/env.yml
       settings:
         user: ${SSH_USER} # SSH用户名（从环境变量获取，避免硬编码敏感信息）
         key: ${SSH_KEY} # SSH私钥（用于免密登录目标服务器，从环境变量获取）
