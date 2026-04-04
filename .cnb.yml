@@ -22,10 +22,6 @@ $:
             - npm install -g pnpm
             - pnpm i
             - pnpm docs:dev
-        - name: build knowledge base
-          image: cnbcool/knowledge-base
-          settings:
-            include: "**/**.md"
 
 # 云原生构建流程和自动部署
 # main改成您实际的分支名称
@@ -74,6 +70,12 @@ main:
           script: |
             pnpm docs:build   # VitePress 专用命令    
         - name: 🚚 部署到Pages
+        - name: build knowledge base
+          image: cnbcool/knowledge-base
+          settings:
+            include: 
+              - "**/**.md"
+              - "**/**.txt"
           # if: |
           #   [ "$CNB_COMMIT_MESSAGE_TITLE" = "BUILD" ]
           image: node:22
