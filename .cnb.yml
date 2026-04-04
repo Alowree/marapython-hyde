@@ -70,12 +70,6 @@ main:
           script: |
             pnpm docs:build   # VitePress 专用命令    
         - name: 🚚 部署到Pages
-        - name: build knowledge base
-          image: cnbcool/knowledge-base
-          settings:
-            include: 
-              - docs/*.md
-              - docs/*.txt
           # if: |
           #   [ "$CNB_COMMIT_MESSAGE_TITLE" = "BUILD" ]
           image: node:22
@@ -93,6 +87,14 @@ main:
             target_url: https://gitee.com/SeasirHyde/teek-hyde.git
             # git_email: 'github-actions[bot]@users.noreply.github.com'
 
+
+        # 构建知识库
+        - name: build knowledge base
+          image: cnbcool/knowledge-base
+          settings:
+            include:
+              - docs/**/*.md
+              - docs/**/*.txt
 
         # 发布通知到钉钉
         - name: 📢 发布通知到钉钉
