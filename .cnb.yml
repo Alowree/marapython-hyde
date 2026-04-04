@@ -74,8 +74,8 @@ main:
           image: cnbcool/knowledge-base
           settings:
             include: 
-              - "**/**.md"
-              - "**/**.txt"
+              - docs/*.md
+              - docs/*.txt
           # if: |
           #   [ "$CNB_COMMIT_MESSAGE_TITLE" = "BUILD" ]
           image: node:22
