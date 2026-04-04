@@ -20,7 +20,7 @@ export const SiteAnalytics = {
       link: "https://umami.is/",
     },
     {
-      icon: "https://51.la/favicon.ico",
+      icon: "https://v6.51.la/favicon.ico",
       title: "51.LA网站统计",
       desc: "免费、易用、专业的网站数据统计与营销分析平台, 实时监测，精准洞察，专注用户行为分析，助力业务增长",
       link: "https://51.la/",

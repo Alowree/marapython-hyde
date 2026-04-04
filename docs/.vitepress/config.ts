@@ -310,40 +310,40 @@ const teekConfig = defineTeekConfig({
     expire: "1d", //可选，登录失效时间，如果不填则以全局配置为准，全局设置默认为 1d
     session: true, //可选，开启是否在网页关闭或刷新后，清除登录状态，这样再次访问网页，需要重新登录，默认为 false
     siteLogin: false, //可选，是否使用站点级别登录功能，即第一次进入网站需要验证，默认为 false
-    site: [
-      {
-        username: "teek", //用户名
-        password: "teek", //密码
-        role: "common", // 角色，common为普通用户，admin为管理员
-        expire: "1d", // 过期时间，单位：天
-        session: true, // 可选，开启是否在网页关闭或刷新后，清除登录状态，这样再次访问网页，需要重新登录，默认为 false
-        strategy: "always", //可选，登录策略，once 代表一次登录，always 代表每次访问都登录，默认为 once
-      },
-      {
-        username: "teek-site-2",
-        password: "teek",
-        role: "admin",
-        expire: "1d",
-        session: false,
-        strategy: "always",
-      },
-    ],
-    pages: [
-      {
-        username: "teek",
-        password: "teek",
-        expire: "1d",
-        session: true,
-        strategy: "once",
-      },
-      {
-        username: "teek-pages-2",
-        password: "teek",
-        expire: "1d",
-        session: false,
-        strategy: "always",
-      },
-    ],
+    // site: [
+    //   {
+    //     username: "teek", //用户名
+    //     password: "teek", //密码
+    //     role: "common", // 角色，common为普通用户，admin为管理员
+    //     expire: "1d", // 过期时间，单位：天
+    //     session: true, // 可选，开启是否在网页关闭或刷新后，清除登录状态，这样再次访问网页，需要重新登录，默认为 false
+    //     strategy: "always", //可选，登录策略，once 代表一次登录，always 代表每次访问都登录，默认为 once
+    //   },
+    //   {
+    //     username: "teek-site-2",
+    //     password: "teek",
+    //     role: "admin",
+    //     expire: "1d",
+    //     session: false,
+    //     strategy: "always",
+    //   },
+    // ],
+    // pages: [
+    //   {
+    //     username: "teek",
+    //     password: "teek",
+    //     expire: "1d",
+    //     session: true,
+    //     strategy: "once",
+    //   },
+    //   {
+    //     username: "teek-pages-2",
+    //     password: "teek",
+    //     expire: "1d",
+    //     session: false,
+    //     strategy: "always",
+    //   },
+    // ],
     // realm: {
     //   blog: [
     //     {
