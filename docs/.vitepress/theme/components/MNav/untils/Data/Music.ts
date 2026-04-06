@@ -28,7 +28,13 @@ export const Music = {
       icon: "https://musicbox.asxe.vip/images/logo.svg",
       title: "MusicBox",
       desc: "一款高颜值、插件化、可深度定制的本地音乐播放器，支持Windows、MacOS、Linux系统",
-      link: "https://docs.nmp.hypcvgm.top/",
+      link: "https://musicbox.asxe.vip/",
+    },
+    {
+      icon: "https://ceru.docs.shiqianjiang.cn/logo.svg",
+      title: "Ceru Music",
+      desc: "澜音是一个跨平台的音乐播放器应用，支持基于合规插件获取公开音乐信息与播放功能。",
+      link: "https://ceru.docs.shiqianjiang.cn/",
     },
   ],
 };
