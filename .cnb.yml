@@ -77,7 +77,7 @@ main:
 
 
         #同步仓库到gitee                  
-        - name: sync to gitee
+        - name: 👉 同步仓库到gitee
           image: tencentcom/git-sync
           settings:
             branch: master
@@ -89,7 +89,7 @@ main:
 
 
         # 构建知识库
-        - name: build knowledge base
+        - name: 📖 构建知识库
           image: cnbcool/knowledge-base
           settings:
             include:

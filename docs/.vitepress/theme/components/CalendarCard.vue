@@ -63,7 +63,6 @@
 import { TkPageCard } from "vitepress-theme-teek";
 import { ref, onMounted, onUnmounted, computed } from "vue";
 
-/** 星期 */
 const weekDays = ["周日", "周一", "周二", "周三", "周四", "周五", "周六"];
 
 /** 当前时间 */
@@ -105,20 +104,18 @@ const calendarWeeks = computed(() => {
   return weeks;
 });
 
-/** 年内第几天 */
 const dayOfYear = computed(() => {
   const start = new Date(today.value.getFullYear(), 0, 0);
   return Math.floor((today.value - start) / 86400000);
 });
 
-/** 第几周 */
 const weekNumber = computed(() => {
   const firstDay = new Date(today.value.getFullYear(), 0, 1);
   const pastDays = (today.value - firstDay) / 86400000;
   return Math.ceil((pastDays + firstDay.getDay() + 1) / 7);
 });
 
-/** ===== 农历（保留你的接口形式） ===== */
+/** ===== 农历（保持你原逻辑） ===== */
 const lunarYear = ref("");
 const lunarMonth = ref("");
 const lunarDay = ref("");
@@ -130,31 +127,54 @@ const updateLunar = () => {
   lunarDay.value = d.getDate() + "日";
 };
 
-/** ===== 核心修复：时间同步 ===== */
+/** ===== 时间系统（核心修复） ===== */
 
-let timer = null;
+let minuteTimer = null;
+let dayTimer = null;
 
-/** 强制同步时间 */
+/** 同步时间 */
 const syncTime = () => {
   today.value = new Date();
   updateLunar();
 };
 
-/** 启动定时器（对齐分钟） */
-const startTimer = () => {
-  syncTime();
-
+/** 启动“分钟级”更新（兜底用） */
+const startMinuteTimer = () => {
   const delay = 60000 - (Date.now() % 60000);
 
   setTimeout(() => {
     syncTime();
-    timer = setInterval(syncTime, 60000);
+    minuteTimer = setInterval(syncTime, 60000);
+  }, delay);
+};
+
+/** 🚨 关键：跨天定时器 */
+const startDayTimer = () => {
+  const now = new Date();
+
+  const tomorrow = new Date(
+    now.getFullYear(),
+    now.getMonth(),
+    now.getDate() + 1,
+    0, 0, 0, 0
+  );
+
+  const delay = tomorrow - now;
+
+  dayTimer = setTimeout(() => {
+    syncTime();
+
+    // 递归，继续监听下一天
+    startDayTimer();
   }, delay);
 };
 
 /** 生命周期 */
 onMounted(() => {
-  startTimer();
+  syncTime();
+
+  startMinuteTimer(); // 兜底
+  startDayTimer();    // 核心
 
   document.addEventListener("visibilitychange", syncTime);
   window.addEventListener("focus", syncTime);
@@ -162,7 +182,9 @@ onMounted(() => {
 });
 
 onUnmounted(() => {
-  clearInterval(timer);
+  clearInterval(minuteTimer);
+  clearTimeout(dayTimer);
+
   document.removeEventListener("visibilitychange", syncTime);
   window.removeEventListener("focus", syncTime);
   window.removeEventListener("pageshow", syncTime);
