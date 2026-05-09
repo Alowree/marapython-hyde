@@ -344,40 +344,12 @@ const teekConfig = defineTeekConfig({
     //     strategy: "always",
     //   },
     // ],
-    // realm: {
-    //   blog: [
-    //     {
-    //       username: "teek-blog-1",
-    //       password: "teek",
-    //       expire: "1d",
-    //       session: true,
-    //       strategy: "once",
-    //     },
-    //     {
-    //       username: "teek-blog-2",
-    //       password: "teek",
-    //       expire: "1d",
-    //       session: false,
-    //       strategy: "always",
-    //     },
-    //   ],
-    //   comment: [
-    //     {
-    //       username: "teek-comment-1",
-    //       password: "teek",
-    //       expire: "1d",
-    //       session: true,
-    //       strategy: "always",
-    //     },
-    //     {
-    //       username: "teek-comment-2",
-    //       password: "teek",
-    //       expire: "1d",
-    //       session: false,
-    //       strategy: "always",
-    //     },
-    //   ],
-    // },
+    // 领域文章级别
+    realm: {
+      firefly: [
+        { username: "firefly", password: "firefly@hyde" },
+      ],
+    },
     // onFocus: (value, formName) => {},
     // onBlur: (value, formName) => {},
     // doLogin: (loginInfo, type, nativeExecLogin) => true,

@@ -2,7 +2,7 @@
   <div class="author-content">
     <div class="create-site-post author-content-item single">
       <div class="author-content-item-tips">心路历程</div>
-      欢迎来到我的个人主页 😝，这里是我记笔记的地方 🙌，目前毕业于济南 
+      欢迎来到我的个人主页 😝，这里是我记笔记的地方 🙌，目前毕业于 
       <strong>{{ personalInfo.school }}</strong> 的 <strong>{{ personalInfo.major }}</strong> 专业，
       虽然有时候常常会忘记更新笔记，咕咕 ✋~ 但是记笔记真的是一个很棒的习惯 💪，
       能把学下来的知识进行积累，沉淀，有一句话说的好，能教给别人的知识，才是真正学会了的知识 ⚡ 
