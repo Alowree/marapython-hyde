@@ -27,6 +27,10 @@ export const Nav: DefaultTheme.NavItem[] = [
         link: "/Teek",
       },
       {
+        text: getNav("Firefly主题", "/svg/NavIcon/teek-logo-mini.svg"),
+        link: "/Firefly",
+      },
+      {
         text: getNav(
           "VitePress",
           "https://vitepress.dev/vitepress-logo-large.svg"

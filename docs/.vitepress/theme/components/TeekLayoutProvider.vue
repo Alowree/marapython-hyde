@@ -12,15 +12,13 @@ import ContributeChart from "./ContributeChart.vue";
 import NotFound from "./404.vue";
 import BannerImgArrow from "./BannerImgArrow/BannerImgArrow.vue"; //导入横幅图片箭头组件
 import NoticeContent from "./NoticeContent.vue"; //导入公告组件
-import GlobalGreet from "./GlobalGreet.vue"; //导入全局问候组件
 import TitleChange from "./TitleChange.vue"; //导入网页标题变化
-import ScrollProgressBar from "./ScrollProgressBar.vue"; //导入顶部滚动条组件
 import DocFooterCopyright from "./DocFooterCopyright.vue"; //导入文档页脚版权组件
 import BackTop from "./BackTop.vue"; //导入回到顶部组件
-import Clock from "./Clock.vue"; // 时钟组件
+// import Clock from "./Clock.vue"; // 时钟组件
 import WelcomeCard from "./WelcomeCard.vue"; // 欢迎卡片
 import WechatCard from "./WechatCard.vue";
-import RouteSwitchingLoading from "./RouteSwitchingLoading.vue"; // 过渡动画组件
+// import RouteSwitchingLoading from "./RouteSwitchingLoading.vue"; // 过渡动画组件
 import Twikoo from "./Twikoo/Twikoo.vue";
 import ScrollToComment from "./ScrollToComment.vue";
 import CalendarCard from "./CalendarCard.vue";
@@ -85,19 +83,13 @@ const handleConfigSwitch = (config: TeekConfig, style: string) => {
 <template>
   <Teek.Layout>
     <template #layout-top>
-      <!-- 全局问候组件 -->
-      <GlobalGreet />
-      <!-- 看板娘组件 -->
-      <!-- <OhMyLive2D /> -->
-      <!-- 顶部滚动条组件 -->
-      <ScrollProgressBar />
       <!--网页标题切换组件  -->
       <TitleChange />
       <!-- 返回顶部组件 -->
       <!--<BackToTop /> -->
 
       <!-- 路由切换遮罩动画组件 -->
-      <RouteSwitchingLoading />
+      <!-- <RouteSwitchingLoading /> -->
     </template>
 
     <template #teek-theme-enhance-bottom>
@@ -152,7 +144,7 @@ const handleConfigSwitch = (config: TeekConfig, style: string) => {
 
     <!-- 右上角时钟组件 -->
     <template #nav-bar-content-after>
-      <Clock />
+      <!-- <Clock /> -->
     </template>
 
     <!-- 文章末尾版权说明 -->
