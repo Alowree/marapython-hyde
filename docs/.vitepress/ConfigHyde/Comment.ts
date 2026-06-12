@@ -1,7 +1,7 @@
 // 评论配置
 export const CommentData = {
   // twikoo 配置，官网：https://twikoo.js.org/
-  envId: "https://twikoo.seasir.top/",
+  envId: "https://twikoo.marapython.com/",
   // link: "https://cdn.jsdelivr.net/npm/twikoo@1.6.44/dist/twikoo.min.js", //teek主题内置
   version: "1.6.44",
 

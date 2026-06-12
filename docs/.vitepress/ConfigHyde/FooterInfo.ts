@@ -30,7 +30,7 @@ export const FooterInfo = {
   },
   bottomMessage: [
     `<script id="LA-DATA-WIDGET" crossorigin="anonymous" charset="UTF-8" src="https://v6-widget.51.la/v6/3MQCwI1AgSSiVg37/quote.js?theme=#1690FF,#539DFD,#539DFD,#539DFD,#FFFFFF,#1690FF,12&f=12"></script>`,
-    
+
     `<a href="https://51.la/" target="_blank" style="display:flex;align-items:center;justify-content:center;">本网站由<img src="https://v6.51.la/favicon.ico" style="width:16px;height:16px;" alt="51.LA"> 51.LA </a>
 
     <a href="https://umami.is/" target="_blank" style="display:flex;align-items:center;justify-content:center;"> |<img src="https://umami.is/favicon.ico" style="width:16px;height:16px;" alt="Umami">Umami </a>
@@ -40,16 +40,16 @@ export const FooterInfo = {
     "人心中的成见是一座大山~",
   ],
   copyright: {
-    createYear: 2021,
-    suffix: "Hyde Blog",
+    createYear: 2020,
+    suffix: "MaraPython",
   },
   icpRecord: {
-    name: "桂ICP备2021009994号",
+    name: "粤ICP备2020001234号",
     link: "http://beian.miit.gov.cn/",
   },
   // 网络安全备案信息配置
   securityRecord: {
-    name: "甘公网安备62102702000211号",
+    name: "鲁公网安备62102702000211号",
     link: "https://beian.mps.gov.cn/",
   },
   customHtml: ``, // 搭配 ./theme/composables/useRuntime.ts

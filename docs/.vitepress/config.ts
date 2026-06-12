@@ -16,8 +16,8 @@ import { Build } from "./build";
 import { createRewrites } from "vitepress-theme-teek/config";
 
 const description = [
-  "欢迎来到 Hyde Blog 🎉",
-  "Hyde Blog 是一个基于 VitePress框架Teek构建的主题，一个简洁、高效、易用的文档和博客写作工具",
+  "欢迎来到 MaraPython 🎉",
+  "MaraPython 是一个基于 VitePress 框架 Teek 构建的主题，一个简洁、高效、易用的文档和博客写作工具",
   "轻松构建一个结构化知识库，适用个人博客、文档站、知识库等场景",
 ].toString();
 
@@ -35,10 +35,9 @@ const teekConfig = defineTeekConfig({
   loading: false, // 启用 Loading 动画，为 false 则关闭 Loading 动画
   // loading: "正在加载中...", // 修改 Loading 文案
 
-
   themeEnhance: {
     themeColor: {
-      defaultColorName: "ep-blue",   //默认主题色为蓝色
+      defaultColorName: "ep-blue", //默认主题色为蓝色
     },
   },
 
@@ -60,7 +59,6 @@ const teekConfig = defineTeekConfig({
     pageSpeed: 4000, // 翻页间隔时间，单位：毫秒。autoPage 为 true 时生效
   },
 
-
   // // 布蒜子统计分析
   // docAnalysis: {
   //   createTime: "2021-10-19",
@@ -78,7 +76,6 @@ const teekConfig = defineTeekConfig({
   //   // ],
   //   appendInfo: [{ key: "index", label: "序号", value: "One" }],
   // },
-
 
   // 布蒜子统计分析
   docAnalysis: {
@@ -131,7 +128,7 @@ const teekConfig = defineTeekConfig({
     cardStyleTitleTagPosition: "left", // 卡片模式下的标题标签位置（postStyle 为 card）
     defaultCoverImg: [], // 默认封面图地址，如果不设置封面图则使用默认封面图地址
   },
-  author: { name: "Hyde", link: "https://gitee.com/SeasirHyde/teek-hyde" }, // 作者信息
+  author: { name: "Alowree XU", link: "https://github.com/Alowree/marapython-teek" }, // 作者信息
   //文章信息分析配置，分别作用在首页和文章页
   articleAnalyze: {
     imageViewer: { hideOnClickModal: true }, // 图片预览是否点击遮罩层关闭}
@@ -166,10 +163,7 @@ const teekConfig = defineTeekConfig({
 
     // 大于半年，添加提示
     const longTime = 6 * 30 * 24 * 60 * 60 * 1000;
-    if (
-      frontmatter.date &&
-      Date.now() - new Date(frontmatter.date).getTime() > longTime
-    )
+    if (frontmatter.date && Date.now() - new Date(frontmatter.date).getTime() > longTime)
       return tip;
   },
   // 评论配置
@@ -222,9 +216,7 @@ const teekConfig = defineTeekConfig({
 
         const transformResult = { ...frontmatter, coverImg };
 
-        return Object.keys(transformResult).length
-          ? transformResult
-          : undefined;
+        return Object.keys(transformResult).length ? transformResult : undefined;
       },
     },
   },
@@ -346,9 +338,7 @@ const teekConfig = defineTeekConfig({
     // ],
     // 领域文章级别
     realm: {
-      firefly: [
-        { username: "firefly", password: "firefly@hyde" },
-      ],
+      firefly: [{ username: "firefly", password: "firefly@hyde" }],
     },
     // onFocus: (value, formName) => {},
     // onBlur: (value, formName) => {},
@@ -397,7 +387,7 @@ export default defineConfig({
   }),
   base: "/",
   extends: teekConfig,
-  title: "Hyde Blog", //左上角网站名称
+  title: "MaraPython", //左上角网站名称
   description: description,
 
   cleanUrls: true, //设置为true就是让链接后不默认添加.html
@@ -435,7 +425,7 @@ export default defineConfig({
   },
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
-    logo: "/avatar/avatar.webp",
+    logo: "/avatar/favicon.ico",
     darkModeSwitchLabel: "主题",
     sidebarMenuLabel: "菜单",
     returnToTopLabel: "返回顶部",
@@ -511,7 +501,7 @@ export default defineConfig({
 
     editLink: {
       text: "在 GitHub 上编辑此页",
-      pattern: "https://gitee.com/SeasirHyde/teek-hyde/edit/main/docs/:path",
+      pattern: "https://github.com/Alowree/marapython-teek/edit/main/docs/:path",
     },
   },
 

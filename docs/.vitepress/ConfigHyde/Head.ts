@@ -1,26 +1,27 @@
 import { HeadConfig } from "vitepress";
 
 const description = [
-  "欢迎来到 Hyde Blog 🎉",
-  "Hyde Blog 是一个基于 VitePress框架Teek构建的主题，一个简洁、高效、易用的文档和博客写作工具",
+  "欢迎来到 MaraPython 🎉",
+  "MaraPython 是一个基于 VitePress 框架 Teek 构建的主题，一个简洁、高效、易用的文档和博客写作工具",
   "轻松构建一个结构化知识库，适用个人博客、文档站、知识库等场景",
 ].toString();
 
 const share: HeadConfig[] = [
   // 页面标题（分享时显示的标题）
-  ["meta", { property: "og:title", content: "Hyde Blog" }],
+  ["meta", { property: "og:title", content: "MaraPython" }],
   // 页面类型（网站类型，如 article、website）
   ["meta", { property: "og:type", content: "website" }],
   // 页面 URL（分享的原始链接，建议使用绝对地址）
-  ["meta", { property: "og:url", content: "https://teek.seasir.top/" }],
+  ["meta", { property: "og:url", content: "https://marapython.com/" }],
   // 描述信息（已配置，可保留）
-  ["meta", { property: "og:description", content: "个人博客，全栈分享" }],
+  ["meta", { property: "og:description", content: "个人博客，记我所想" }],
   // 分享图片（已配置，建议图片尺寸为 1200x630px，提升展示效果）
   [
     "meta",
     {
       property: "og:image",
-      content: "https://teek.seasir.top/avatar/avatar.webp",
+      // content: "https://marapython.com/avatar/avatar.jpg",
+      content: "/avatar/avatar.jpg",
     },
   ],
   // 图片备选尺寸（可选，帮助平台识别图片）
@@ -40,7 +41,8 @@ const weChatShare: HeadConfig[] = [
     "meta",
     {
       name: "wechat-share-img",
-      content: "https://teek.seasir.top/avatar/avatar.webp",
+      // content: "https://marapython.com/avatar/avatar.jpg",
+      content: "/avatar/avatar.jpg",
     },
   ],
 ];
@@ -56,7 +58,7 @@ export const HeadData = [
       src: "//sdk.51.la/js-sdk-pro.min.js",
     },
   ],
-  // 灵雀应用监控平台 
+  // 灵雀应用监控平台
   [
     "script",
     {
@@ -84,33 +86,30 @@ export const HeadData = [
   ["meta", { name: "description", description }],
   ["meta", { name: "keywords", description }],
   ["meta", { name: "baidu-site-verification", content: "codeva-QnY1Xh758j" }], // 百度收录
-  [
-    "meta",
-    { name: "msvalidate.01", content: "48CABE70F538B8D117567176ABF325AF" },
-  ], // Bing 收录验证
-  ["meta", { name: "algolia-site-verification", content: "6B185D954DD3AC7E" }], // Algolia 站点验证
-  ["meta", { property: "og:description", content: "心中的成见是一座大山" }],
+  ["meta", { name: "msvalidate.01", content: "48CABE70F538B8D117567176ABF325AF" }], // Bing 收录验证
+  ["meta", { name: "algolia-site-verification", content: "44118418529FFD9E" }], // Algolia 站点验证 2026-06-12 marapython.com,wiki.marapython.com
+  ["meta", { property: "og:description", content: "Do What You Love; Love What You Do" }],
   [
     "meta",
     {
       property: "og:image",
-      content: "https://teek.seasir.top/avatar/avatar.webp",
+      content: "https://marapython.com/avatar/avatar.jpg",
     },
   ],
   // 图标
   ["link", { rel: "icon", href: "/favicon.ico", type: "image/x-icon" }],
   // 作者信息
-  ["meta", { name: "author", content: "Hyde" }],
-   // 版权声明
-  ["meta", { name: "copyright", content: "© 2025 Hyde Blog. All Rights Reserved." }],
+  ["meta", { name: "author", content: "Alowree" }],
+  // 版权声明
+  ["meta", { name: "copyright", content: "© 2026 MaraPython. All Rights Reserved." }],
   // 规范网址，告诉搜索引擎站点的首选域名
-  ["link", { rel: "canonical", href: "https://teek.seasir.top/" }],
+  ["link", { rel: "canonical", href: "https://marapython.come/" }],
   // Android 添加到主屏幕
-  ["meta", { name: "application-name", content: "Hyde Blog" }],
+  ["meta", { name: "application-name", content: "MaraPython" }],
   // 站点的索引策略，index:允许索引；follow:允许跟踪链接
   ["meta", { name: "robots", content: "index, follow" }],
   // 移动设备适配声明，向搜索引擎明确站点对移动设备友好
-  ["meta", { name: "mobile-agent", content: "format=html5; url=https://teek.seasir.top/" }],
+  ["meta", { name: "mobile-agent", content: "format=html5; url=https://marapython.com/" }],
   // 防点击劫持，禁止其他网站通过 iframe 嵌入你的站点
   ["meta", { httpEquiv: "X-Frame-Options", content: "DENY" }],
   // 防 MIME 类型嗅探，阻止浏览器猜测资源类型，避免恶意文件执行
@@ -150,11 +149,7 @@ export const HeadData = [
   ],
   ...share,
   ...weChatShare,
-  [
-    "noscript",
-    {},
-    '<meta http-equiv="refresh" content="0; url={https://www.baidu.com/}">',
-  ], // 禁用js跳转
+  ["noscript", {}, '<meta http-equiv="refresh" content="0; url={https://www.baidu.com/}">'], // 禁用js跳转
   [
     "script",
     { type: "application/ld+json" },
@@ -162,20 +157,20 @@ export const HeadData = [
       "@context": "https://schema.org",
       "@type": "Blog",
       name: "Hyde Blog",
-      url: "https://teek.seasir.top/",
+      url: "https://marapython.come/",
       author: {
         "@type": "Person",
-        name: "Hyde"
+        name: "Alowree",
       },
       keywords: ["博客", "前端", "后端", "vitepress"],
       description: "个人博客，全栈分享",
-      image: "https://teek.seasir.top/avatar/avatar.webp",
+      image: "https://marapython.com/avatar/avatar.jpg",
       publisher: {
         "@type": "Person",
-        name: "Hyde"
-      }
-    })
-  ]
+        name: "Alowree",
+      },
+    }),
+  ],
   //免费的音乐播放器
   // [
   //   "script",
