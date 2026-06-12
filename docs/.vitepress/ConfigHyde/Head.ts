@@ -86,9 +86,18 @@ export const HeadData = [
   ["meta", { name: "description", description }],
   ["meta", { name: "keywords", description }],
   ["meta", { name: "baidu-site-verification", content: "codeva-QnY1Xh758j" }], // 百度收录
-  ["meta", { name: "msvalidate.01", content: "48CABE70F538B8D117567176ABF325AF" }], // Bing 收录验证
-  ["meta", { name: "algolia-site-verification", content: "44118418529FFD9E" }], // Algolia 站点验证 2026-06-12 marapython.com,wiki.marapython.com
-  ["meta", { property: "og:description", content: "Do What You Love; Love What You Do" }],
+  [
+    "meta",
+    { name: "msvalidate.01", content: "48CABE70F538B8D117567176ABF325AF" },
+  ], // Bing 收录验证
+  ["meta", { name: "algolia-site-verification", content: "E29EEBB136FD597D" }], // Algolia 站点验证 2026-06-12 marapython.com
+  [
+    "meta",
+    {
+      property: "og:description",
+      content: "Do What You Love; Love What You Do",
+    },
+  ],
   [
     "meta",
     {
@@ -101,7 +110,10 @@ export const HeadData = [
   // 作者信息
   ["meta", { name: "author", content: "Alowree" }],
   // 版权声明
-  ["meta", { name: "copyright", content: "© 2026 MaraPython. All Rights Reserved." }],
+  [
+    "meta",
+    { name: "copyright", content: "© 2026 MaraPython. All Rights Reserved." },
+  ],
   // 规范网址，告诉搜索引擎站点的首选域名
   ["link", { rel: "canonical", href: "https://marapython.come/" }],
   // Android 添加到主屏幕
@@ -109,7 +121,13 @@ export const HeadData = [
   // 站点的索引策略，index:允许索引；follow:允许跟踪链接
   ["meta", { name: "robots", content: "index, follow" }],
   // 移动设备适配声明，向搜索引擎明确站点对移动设备友好
-  ["meta", { name: "mobile-agent", content: "format=html5; url=https://marapython.com/" }],
+  [
+    "meta",
+    {
+      name: "mobile-agent",
+      content: "format=html5; url=https://marapython.com/",
+    },
+  ],
   // 防点击劫持，禁止其他网站通过 iframe 嵌入你的站点
   ["meta", { httpEquiv: "X-Frame-Options", content: "DENY" }],
   // 防 MIME 类型嗅探，阻止浏览器猜测资源类型，避免恶意文件执行
@@ -149,7 +167,11 @@ export const HeadData = [
   ],
   ...share,
   ...weChatShare,
-  ["noscript", {}, '<meta http-equiv="refresh" content="0; url={https://www.baidu.com/}">'], // 禁用js跳转
+  [
+    "noscript",
+    {},
+    '<meta http-equiv="refresh" content="0; url={https://www.baidu.com/}">',
+  ], // 禁用js跳转
   [
     "script",
     { type: "application/ld+json" },
