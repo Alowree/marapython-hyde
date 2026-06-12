@@ -128,7 +128,10 @@ const teekConfig = defineTeekConfig({
     cardStyleTitleTagPosition: "left", // 卡片模式下的标题标签位置（postStyle 为 card）
     defaultCoverImg: [], // 默认封面图地址，如果不设置封面图则使用默认封面图地址
   },
-  author: { name: "Alowree XU", link: "https://github.com/Alowree/marapython-teek" }, // 作者信息
+  author: {
+    name: "Alowree XU",
+    link: "https://github.com/Alowree/marapython-teek",
+  }, // 作者信息
   //文章信息分析配置，分别作用在首页和文章页
   articleAnalyze: {
     imageViewer: { hideOnClickModal: true }, // 图片预览是否点击遮罩层关闭}
@@ -163,7 +166,10 @@ const teekConfig = defineTeekConfig({
 
     // 大于半年，添加提示
     const longTime = 6 * 30 * 24 * 60 * 60 * 1000;
-    if (frontmatter.date && Date.now() - new Date(frontmatter.date).getTime() > longTime)
+    if (
+      frontmatter.date &&
+      Date.now() - new Date(frontmatter.date).getTime() > longTime
+    )
       return tip;
   },
   // 评论配置
@@ -216,7 +222,9 @@ const teekConfig = defineTeekConfig({
 
         const transformResult = { ...frontmatter, coverImg };
 
-        return Object.keys(transformResult).length ? transformResult : undefined;
+        return Object.keys(transformResult).length
+          ? transformResult
+          : undefined;
       },
     },
   },
@@ -227,7 +235,8 @@ const teekConfig = defineTeekConfig({
       md.use(groupIconMdPlugin); // 代码组图标插件
     },
     demo: {
-      githubUrl: "https://github.com/Kele-Bingtang/vitepress-theme-teek/blob/master/docs",
+      githubUrl:
+        "https://github.com/Kele-Bingtang/vitepress-theme-teek/blob/master/docs",
     },
   },
   // 站点分析
@@ -450,9 +459,10 @@ export default defineConfig({
     search: {
       provider: "algolia",
       options: {
-        appId: "2JNHX3I8RB",
-        apiKey: "84a579c812901faa463103fb5ab52c4c",
-        indexName: "hyde_blog",
+        appId: "EU89T62U5P",
+        apiKey: "d481c3fc7004d025c55adaa8ce87bb79",
+        // b3586ae22fc02fd3f2500512aaa1764b
+        indexName: "algolia_marapython_hyde_pages",
         locales: {
           root: {
             placeholder: "搜索文档",
@@ -501,7 +511,8 @@ export default defineConfig({
 
     editLink: {
       text: "在 GitHub 上编辑此页",
-      pattern: "https://github.com/Alowree/marapython-teek/edit/main/docs/:path",
+      pattern:
+        "https://github.com/Alowree/marapython-teek/edit/main/docs/:path",
     },
   },
 
