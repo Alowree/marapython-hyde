@@ -191,7 +191,7 @@ const teekConfig = defineTeekConfig({
   },
 
   vitePlugins: {
-    permalink: false,
+    permalink: true,
     sidebar: true,
     sidebarOption: {
       initItems: false, //这条命令注释后，才会让文档和目录的样式保持一致
@@ -391,9 +391,9 @@ const teekConfig = defineTeekConfig({
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  rewrites: createRewrites({
-    srcDir: "docs",
-  }),
+  // rewrites: createRewrites({
+  //   srcDir: "docs",
+  // }),
   base: "/",
   extends: teekConfig,
   title: "MaraPython", //左上角网站名称
