@@ -160,7 +160,7 @@ export const HeadData = [
   [
     "script",
     {
-      src: "https://umami.seasir.top/script.js",
+      src: "https://umami.marapython.com/script.js",
       "data-website-id": "4508c10d-79fd-4b94-bc06-590a4dc6d598",
       defer: "defer",
     },
@@ -178,7 +178,7 @@ export const HeadData = [
     JSON.stringify({
       "@context": "https://schema.org",
       "@type": "Blog",
-      name: "Hyde Blog",
+      name: "Marketing Analytics with Python",
       url: "https://marapython.com/",
       author: {
         "@type": "Person",
