@@ -191,7 +191,7 @@ const teekConfig = defineTeekConfig({
   },
 
   vitePlugins: {
-    permalink: true,
+    permalink: false,
     sidebar: true,
     sidebarOption: {
       initItems: false, //这条命令注释后，才会让文档和目录的样式保持一致
