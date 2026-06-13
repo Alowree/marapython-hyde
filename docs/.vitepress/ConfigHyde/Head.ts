@@ -115,7 +115,7 @@ export const HeadData = [
     { name: "copyright", content: "© 2026 MaraPython. All Rights Reserved." },
   ],
   // 规范网址，告诉搜索引擎站点的首选域名
-  ["link", { rel: "canonical", href: "https://marapython.come/" }],
+  ["link", { rel: "canonical", href: "https://marapython.com/" }],
   // Android 添加到主屏幕
   ["meta", { name: "application-name", content: "MaraPython" }],
   // 站点的索引策略，index:允许索引；follow:允许跟踪链接
@@ -179,7 +179,7 @@ export const HeadData = [
       "@context": "https://schema.org",
       "@type": "Blog",
       name: "Hyde Blog",
-      url: "https://marapython.come/",
+      url: "https://marapython.com/",
       author: {
         "@type": "Person",
         name: "Alowree",
