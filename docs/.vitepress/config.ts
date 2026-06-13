@@ -461,7 +461,6 @@ export default defineConfig({
       options: {
         appId: "EU89T62U5P",
         apiKey: "d481c3fc7004d025c55adaa8ce87bb79",
-        // b3586ae22fc02fd3f2500512aaa1764b
         indexName: "algolia_marapython_hyde_pages",
         locales: {
           root: {
