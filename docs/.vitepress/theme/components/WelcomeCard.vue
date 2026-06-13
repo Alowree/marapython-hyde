@@ -116,11 +116,11 @@ const distance = ref<string>("");
 // 公告内容
 const noticeContent: NoticeContent = {
   title: "📢 欢迎来访者",
-  subtitle: "👋🏻 Hi，我是Hyde，欢迎您！",
+  subtitle: "👋🏻 Hi，我是 Alowree，欢迎您！",
   content: "❓ 如有问题欢迎评论区交流！",
-  error: "😫 页面异常？尝试Ctrl+F5",
+  error: "😫 页面异常？尝试 Ctrl+F5",
   email:
-    '📧 如需联系我：<a href="mailto:seasir666@gmail.com" style="color: var(--vp-c-brand-1);">发送邮件🚀</a>',
+    '📧 如需联系我：<a href="mailto:alowree@gmail.com" style="color: var(--vp-c-brand-1);">发送邮件🚀</a>',
 };
 
 // 获取IP数据
@@ -135,7 +135,7 @@ const fetchIPData = async (): Promise<void> => {
     }
 
     const result = await response.json();
-    
+
     // 处理新API返回的数据结构
     if (result && result.code === 200 && result.data) {
       const data = result.data;
@@ -147,7 +147,7 @@ const fetchIPData = async (): Promise<void> => {
         district: data.district ? data.district : "",
         adcode: 0,
         lat: data.location ? data.location.lat : 0,
-        lng: data.location ? data.location.lng : 0
+        lng: data.location ? data.location.lng : 0,
       };
       // 计算距离
       distance.value = calculateDistance();
@@ -165,7 +165,7 @@ const fetchWeatherData = async (): Promise<void> => {
   // 暂时禁用天气数据获取，因为新的IP查询API不包含天气信息
   // 如需天气功能，需要另外集成天气API
   weatherData.value = null;
-  
+
   /*
   // 如果后续需要天气功能，可以使用其他天气API，例如：
   try {

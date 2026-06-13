@@ -40,11 +40,11 @@ import {
 
 export const profile = {
   title: "你好👋我是",
-  name: "Hyde",
-  desc: "探索Web边界，记录成长的点滴",
+  name: "Alowree",
+  desc: "探索 Marketing 边界，记录成长的点滴",
   avatar: "/avatar/avatar.webp",
   buttons: [
-    { text: "联系我", link: "mailto:your@email.com", type: "primary" },
+    { text: "联系我", link: "mailto:alowree@email.com", type: "primary" },
     { text: "查看项目", link: "/Teek", type: "default" },
   ],
 };
@@ -167,9 +167,9 @@ export const ossProjects = [
     desc: "一个基于 Vue3、TypeScript、Vite、Pinia、ElementPlus 搭建的现代 Template 管理系统模板。",
     tag: { name: "Vue3", bg: "#eaf6ff", color: "#33a474" },
     projectsimg: "/home/bg20.webp",
-    Star: '83.8k',
-    Fork: '45.6k',
-    View: '72.1k',
+    Star: "83.8k",
+    Fork: "45.6k",
+    View: "72.1k",
     github: "https://vue3-docs.youngkbt.cn/",
   },
   {
@@ -177,9 +177,9 @@ export const ossProjects = [
     desc: "一个基于VitePress框架深度定制的Teek主题静态站点",
     tag: { name: "React", bg: "#e3edfa", color: "#3976c6" },
     projectsimg: "/home/bg1.webp",
-    Star: '35.0k',
-    Fork: '12.6k',
-    View: '32.6k',
+    Star: "35.0k",
+    Fork: "12.6k",
+    View: "32.6k",
     github: "https://gitee.com/SeasirHyde/teek-hyde",
   },
   {
@@ -187,9 +187,9 @@ export const ossProjects = [
     desc: "Teek 是一个轻量、简洁高效、灵活配置、易于扩展的 VitePress 主题 ✨",
     tag: { name: "JavaScript", bg: "#fffbe6", color: "#e4ae3a" },
     projectsimg: "/home/bg19.webp",
-    Star: '96.8k',
-    Fork: '46.2k',
-    View: '79.3k',
+    Star: "96.8k",
+    Fork: "46.2k",
+    View: "79.3k",
     github: "https://github.com/Kele-Bingtang/vitepress-theme-teek",
   },
 ];
