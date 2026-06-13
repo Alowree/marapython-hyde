@@ -1,10 +1,9 @@
 ---
 date: 2026-02-26
-title: 'NeoMutt Tutorial 13: Search and Filtering'
+title: "NeoMutt Tutorial 13: Search and Filtering"
 permalink: /pages/neomutt-search-filter
 categories:
   - Tool
-  - CLI
   - NeoMutt
 ---
 

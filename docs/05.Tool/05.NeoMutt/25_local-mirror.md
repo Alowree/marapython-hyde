@@ -1,10 +1,9 @@
 ---
 date: 2026-02-26
-title: 'NeoMutt Tutorial 15: Local Mirror with mbsync'
+title: "NeoMutt Tutorial 15: Local Mirror with mbsync"
 permalink: /pages/neomutt-local-mirror
 categories:
   - Tool
-  - CLI
   - NeoMutt
 ---
 

@@ -1,10 +1,9 @@
 ---
 date: 2026-02-26
-title: 'NeoMutt Tutorial 12: Keymaps and Daily Usage'
+title: "NeoMutt Tutorial 12: Keymaps and Daily Usage"
 permalink: /pages/neomutt-keymaps-usage
 categories:
   - Tool
-  - CLI
   - NeoMutt
 ---
 

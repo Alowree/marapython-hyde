@@ -4,7 +4,6 @@ title: "NeoMutt Tutorial 11: Basic IMAP Setup"
 permalink: /pages/neomutt-basic-imap
 categories:
   - Tool
-  - CLI
   - NeoMutt
 ---
 

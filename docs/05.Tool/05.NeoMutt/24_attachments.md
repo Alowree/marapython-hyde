@@ -1,10 +1,9 @@
 ---
 date: 2026-02-26
-title: 'NeoMutt Tutorial 14: Attachments'
+title: "NeoMutt Tutorial 14: Attachments"
 permalink: /pages/neomutt-attachments
 categories:
   - Tool
-  - CLI
   - NeoMutt
 ---
 
