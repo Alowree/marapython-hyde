@@ -166,10 +166,7 @@ const teekConfig = defineTeekConfig({
 
     // 大于半年，添加提示
     const longTime = 6 * 30 * 24 * 60 * 60 * 1000;
-    if (
-      frontmatter.date &&
-      Date.now() - new Date(frontmatter.date).getTime() > longTime
-    )
+    if (frontmatter.date && Date.now() - new Date(frontmatter.date).getTime() > longTime)
       return tip;
   },
   // 评论配置
@@ -222,9 +219,7 @@ const teekConfig = defineTeekConfig({
 
         const transformResult = { ...frontmatter, coverImg };
 
-        return Object.keys(transformResult).length
-          ? transformResult
-          : undefined;
+        return Object.keys(transformResult).length ? transformResult : undefined;
       },
     },
   },
@@ -235,8 +230,7 @@ const teekConfig = defineTeekConfig({
       md.use(groupIconMdPlugin); // 代码组图标插件
     },
     demo: {
-      githubUrl:
-        "https://github.com/Kele-Bingtang/vitepress-theme-teek/blob/master/docs",
+      githubUrl: "https://github.com/Kele-Bingtang/vitepress-theme-teek/blob/master/docs",
     },
   },
   // 站点分析
@@ -302,7 +296,7 @@ const teekConfig = defineTeekConfig({
   // 风险链接提示页
   riskLink: {
     enabled: true, //是否启用风险链接提示功能
-    whitelist: ["https://teek.seasir.top/", /https:\/\/github.com/], // 白名单，匹配到的链接不提示风险
+    whitelist: ["https://marapython.com/", /https:\/\/github.com/], // 白名单，匹配到的链接不提示风险
     blacklist: [], // 黑名单，匹配到的链接提示风险
   },
   // 私密文章（登录页）
@@ -347,7 +341,7 @@ const teekConfig = defineTeekConfig({
     // ],
     // 领域文章级别
     realm: {
-      firefly: [{ username: "firefly", password: "firefly@hyde" }],
+      firefly: [{ username: "mara", password: "python" }],
     },
     // onFocus: (value, formName) => {},
     // onBlur: (value, formName) => {},
@@ -510,8 +504,7 @@ export default defineConfig({
 
     editLink: {
       text: "在 GitHub 上编辑此页",
-      pattern:
-        "https://github.com/Alowree/marapython-teek/edit/main/docs/:path",
+      pattern: "https://github.com/Alowree/marapython-teek/edit/main/docs/:path",
     },
   },
 

@@ -11,7 +11,7 @@
             <a class="footer-item" title="设计开发" href="#" @click.prevent>设计开发</a>
           </div>
         </div>
-        
+
         <div class="footer-group">
           <div class="footer-title">导航</div>
           <div class="footer-links">
@@ -20,7 +20,7 @@
             <a class="footer-item" title="个人作品" href="#" @click.prevent>个人作品</a>
           </div>
         </div>
-        
+
         <div class="footer-group">
           <div class="footer-title">协议</div>
           <div class="footer-links">
@@ -32,75 +32,75 @@
 
       <!-- 徽章 -->
       <p id="ghbdages">
-        <a 
-          class="github-badge" 
-          target="_blank" 
-          href="#" 
+        <a
+          class="github-badge"
+          target="_blank"
+          href="#"
           @click.prevent
-          style="margin-inline:5px" 
-          data-title="本站使用安知鱼主题" 
+          style="margin-inline: 5px"
+          data-title="本站使用安知鱼主题"
           title="本站使用安知鱼主题"
         >
-          <img 
-            src="https://img.shields.io/badge/zsr-Ubuntu-E95420?logo=ubuntu&label=Server" 
+          <img
+            src="https://img.shields.io/badge/zsr-Ubuntu-E95420?logo=ubuntu&label=Server"
             alt="本站使用安知鱼主题"
-          >
+          />
         </a>
-        <a 
-          class="github-badge" 
-          target="_blank" 
-          href="#" 
+        <a
+          class="github-badge"
+          target="_blank"
+          href="#"
           @click.prevent
-          style="margin-inline:5px" 
-          data-title="本站使用安知鱼主题" 
+          style="margin-inline: 5px"
+          data-title="本站使用安知鱼主题"
           title="本站使用安知鱼主题"
         >
-          <img 
-            src="https://img.shields.io/badge/zsr-Vue-4FC08D?logo=Vue.js&label=Frame" 
+          <img
+            src="https://img.shields.io/badge/zsr-Vue-4FC08D?logo=Vue.js&label=Frame"
             alt="本站使用安知鱼主题"
-          >
+          />
         </a>
-        <a 
-          class="github-badge" 
-          target="_blank" 
-          href="#" 
+        <a
+          class="github-badge"
+          target="_blank"
+          href="#"
           @click.prevent
-          style="margin-inline:5px" 
-          data-title="本站使用安知鱼主题" 
+          style="margin-inline: 5px"
+          data-title="本站使用安知鱼主题"
           title="本站使用安知鱼主题"
         >
-          <img 
-            src="https://img.shields.io/badge/zsr-Vite-blue?logo=vite&label=Build" 
+          <img
+            src="https://img.shields.io/badge/zsr-Vite-blue?logo=vite&label=Build"
             alt="本站使用安知鱼主题"
-          >
+          />
         </a>
-        <a 
-          class="github-badge" 
-          target="_blank" 
-          href="#" 
+        <a
+          class="github-badge"
+          target="_blank"
+          href="#"
           @click.prevent
-          style="margin-inline:5px" 
-          data-title="本站使用安知鱼主题" 
+          style="margin-inline: 5px"
+          data-title="本站使用安知鱼主题"
           title="本站使用安知鱼主题"
         >
-          <img 
-            src="https://img.shields.io/badge/zsr-EdgeOne-blue?logo=icloud&label=CDN" 
+          <img
+            src="https://img.shields.io/badge/zsr-EdgeOne-blue?logo=icloud&label=CDN"
             alt="本站使用安知鱼主题"
-          >
+          />
         </a>
-        <a 
-          class="github-badge" 
-          target="_blank" 
-          href="#" 
+        <a
+          class="github-badge"
+          target="_blank"
+          href="#"
           @click.prevent
-          style="margin-inline:5px" 
-          data-title="本站使用安知鱼主题" 
+          style="margin-inline: 5px"
+          data-title="本站使用安知鱼主题"
           title="本站使用安知鱼主题"
         >
-          <img 
-            src="https://img.shields.io/badge/zsr-Github-181717?logo=github&label=Source" 
+          <img
+            src="https://img.shields.io/badge/zsr-Github-181717?logo=github&label=Source"
             alt="本站使用安知鱼主题"
-          >
+          />
         </a>
       </p>
     </div>
@@ -111,32 +111,23 @@
         <div class="footer-bar-left">
           <div id="footer-bar-tips">
             <div class="copyright">
-              &copy;2025 By 
-              <a class="footer-bar-link" href="#" title="Hyde" target="_blank" @click.prevent>Hyde</a>
+              &copy;2025 By
+              <a class="footer-bar-link" href="#" title="MaraPython" target="_blank" @click.prevent
+                >MaraPython</a
+              >
             </div>
           </div>
         </div>
         <div class="footer-bar-right">
-          <a 
-            class="footer-bar-link" 
-            target="_blank" 
-            href="#" 
-            title="主题" 
-            @click.prevent
-          >主题</a>
-          <a 
-            class="footer-bar-link" 
-            target="_blank" 
-            href="#" 
-            title="项目"
-            @click.prevent
-          >项目</a>
-          <a 
-            class="footer-bar-link" 
-            target="_blank" 
-            href="https://beian.miit.gov.cn/" 
-            title="冀ICP备2025110107号-1"
-          >冀ICP备2025110107号-1</a>
+          <a class="footer-bar-link" target="_blank" href="#" title="主题" @click.prevent>主题</a>
+          <a class="footer-bar-link" target="_blank" href="#" title="项目" @click.prevent>项目</a>
+          <a
+            class="footer-bar-link"
+            target="_blank"
+            href="https://beian.miit.gov.cn/"
+            title="ICP备202511fake号-1"
+            >ICP备202511fake号-1</a
+          >
         </div>
       </div>
     </div>
@@ -204,7 +195,7 @@
   cursor: pointer;
   padding: 2px 0;
   text-decoration: none;
-  transition: .3s;
+  transition: 0.3s;
 }
 
 .footer-item:hover {
@@ -235,7 +226,7 @@
   display: flex;
   overflow: hidden;
   z-index: 1002;
-  transition: .3s;
+  transition: 0.3s;
 }
 
 #footer-bar a:hover {
@@ -249,7 +240,7 @@
   font-weight: 700;
   white-space: nowrap;
   text-decoration: none;
-  transition: .3s;
+  transition: 0.3s;
 }
 
 .footer-bar-link:hover {
@@ -322,3 +313,4 @@
   }
 }
 </style>
+

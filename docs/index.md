@@ -2,7 +2,7 @@
 layout: home
 
 title: MaraPython - Marketing Analytics with Python and Marathon
-titleTemplate: Talk is Cheap, Show me Your Data
+titleTemplate: Talk is Cheap, Show Me Your Data!
 
 tk:
   teekHome: false #是否启用 Teek 的首页风格，如果为 false，则还原到 Vitepress 的默认首页，其他功能不

@@ -90,7 +90,7 @@ const teekBlogCommonConfig: TeekConfig = {
         show: true,
       },
     ],
-    appendInfo: [{ key: "index", label: "序号", value: "Hyde" }],
+    appendInfo: [{ key: "index", label: "序号", value: "Mara" }],
   },
 };
 

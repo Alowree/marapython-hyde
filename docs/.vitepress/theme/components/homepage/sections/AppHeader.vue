@@ -5,7 +5,7 @@
         <!-- 网站名称 -->
         <span id="blog_name">
           <a id="site-name" href="/" accesskey="h" @click.prevent>
-            <div class="title">Hyde</div>
+            <div class="title">MaraPython</div>
             <i class="anzhiyufont anzhiyu-icon-house-chimney"></i>
           </a>
         </span>
@@ -20,30 +20,22 @@
         <!-- 导航菜单 -->
         <div id="menus">
           <div class="menus_items">
-            <div 
-              v-for="item in menuItems" 
-              :key="item.id"
-              class="menus_item"
-            >
-              <a 
-                class="site-page" 
-                href="javascript:void(0);" 
-                @click.prevent
-              >
+            <div v-for="item in menuItems" :key="item.id" class="menus_item">
+              <a class="site-page" href="javascript:void(0);" @click.prevent>
                 <span>{{ item.title }}</span>
               </a>
               <ul v-if="item.children" class="menus_item_child">
                 <li v-for="child in item.children" :key="child.id">
-                  <a 
-                    class="site-page child faa-parent animated-hover" 
+                  <a
+                    class="site-page child faa-parent animated-hover"
                     :href="child.url"
                     @click.prevent
                   >
-                    <i 
+                    <i
                       v-if="child.icon"
-                      :class="`anzhiyufont ${child.icon} faa-tada`" 
-                      style="font-size:.9em"
-                    ></i> 
+                      :class="`anzhiyufont ${child.icon} faa-tada`"
+                      style="font-size: 0.9em"
+                    ></i>
                     <span>{{ child.title }}</span>
                   </a>
                 </li>
@@ -62,9 +54,9 @@
 </template>
 
 <script setup lang="ts">
-import { useMenuData } from '../data/useData'
+import { useMenuData } from "../data/useData";
 
-const { menuItems } = useMenuData()
+const { menuItems } = useMenuData();
 </script>
 
 <style scoped>
@@ -72,7 +64,7 @@ const { menuItems } = useMenuData()
 .page-header {
   position: relative;
   width: 100%;
-  transition: all .5s ease 0s;
+  transition: all 0.5s ease 0s;
 }
 
 .page-header.not-top-img {
@@ -83,12 +75,12 @@ const { menuItems } = useMenuData()
 
 #nav {
   position: fixed;
-  transition: .3s;
+  transition: 0.3s;
   top: 0;
   z-index: 90;
   display: flex;
   align-items: center;
-  padding: 0 calc((100% - 1400px + 3rem)/ 2);
+  padding: 0 calc((100% - 1400px + 3rem) / 2);
   width: 100%;
   height: 64px;
   opacity: 1;
@@ -127,14 +119,14 @@ const { menuItems } = useMenuData()
   align-items: center;
   flex-wrap: nowrap;
   height: 60px;
-  transition: .3s;
+  transition: 0.3s;
   z-index: 102;
 }
 
 #site-name {
   font-weight: 700;
   cursor: pointer;
-  transition: .3s !important;
+  transition: 0.3s !important;
   color: var(--anzhiyu-fontcolor);
   text-decoration: none;
   display: flex;
@@ -211,15 +203,15 @@ const { menuItems } = useMenuData()
   align-items: center;
   margin: auto;
   border-radius: 30px;
-  padding: 0 .4rem;
+  padding: 0 0.4rem;
 }
 
 #menus .menus_item > a {
-  letter-spacing: .3rem;
+  letter-spacing: 0.3rem;
   font-weight: 700;
   color: var(--anzhiyu-fontcolor);
   text-decoration: none;
-  padding: 0 .8em 0 1em;
+  padding: 0 0.8em 0 1em;
   border-radius: 50px;
   transition: color 0s !important;
   height: 35px;
@@ -238,7 +230,7 @@ const { menuItems } = useMenuData()
   width: max-content;
   border: 1px solid var(--anzhiyu-card-border);
   box-shadow: var(--anzhiyu-shadow-black);
-  transition: .2s;
+  transition: 0.2s;
   background-color: var(--anzhiyu-card-bg);
   border-radius: 50px;
   right: auto;
@@ -260,7 +252,7 @@ const { menuItems } = useMenuData()
 }
 
 #menus .menus_item_child li {
-  transition: all .3s;
+  transition: all 0.3s;
   display: inline-block;
   margin: 0 3px;
   border-radius: 50px;
@@ -277,7 +269,7 @@ const { menuItems } = useMenuData()
   padding: 8px 16px;
   display: flex;
   align-items: center;
-  transition: .3s;
+  transition: 0.3s;
 }
 
 #menus .menus_item_child .child:hover {
@@ -300,10 +292,11 @@ const { menuItems } = useMenuData()
   #nav {
     padding: 0 16px;
   }
-  
+
   #menus .menus_item > a {
     font-size: 0.9rem;
-    padding: 0 .5em;
+    padding: 0 0.5em;
   }
 }
 </style>
+

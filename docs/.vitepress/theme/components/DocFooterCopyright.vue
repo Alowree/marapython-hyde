@@ -14,12 +14,7 @@
     <p class="copyright-item">
       <TkIcon :icon="iconMap.linkIcon" />
       文章链接：
-      <a
-        :href="fullArticleUrl"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="url-link"
-      >
+      <a :href="fullArticleUrl" target="_blank" rel="noopener noreferrer" class="url-link">
         {{ displayArticleUrl }}
       </a>
     </p>
@@ -32,10 +27,11 @@
         rel="noopener noreferrer"
         class="license-link"
       >
-        BY-NC-SA 4.0
+        &nbsp;BY-NC-SA 4.0&nbsp;
       </a>
-      许可协议。 转载请注明来自
-      <a :href="authorLink" class="author-link">{{ author }}</a>
+      许可协议。转载请注明来自&nbsp;
+      <a :href="authorLink" class="author-link">{{ site_name }}</a>
+      ，谢谢合作。
     </p>
   </div>
 </template>
@@ -48,8 +44,9 @@ import { TkIcon } from "vitepress-theme-teek";
 
 // ========================= 配置常量 =========================
 // 作者信息（非响应式，常量直接定义）
-const author = "Hyde";
-const authorLink = "https://teek.seasir.top/";
+const author = "Alowree XU";
+const site_name = "MaraPython";
+const authorLink = "https://marapython.com/";
 
 // 路径映射表：长路径 -> 简洁显示路径（配置型数据前置）
 const pathMapping = {
@@ -84,7 +81,7 @@ const updateArticleUrl = () => {
   const currentUrl = new URL(window.location.href);
   // 1. 处理完整URL（移除hash，用于跳转）
   const cleanFullUrl = `${currentUrl.protocol}//${currentUrl.host}${currentUrl.pathname}`;
-  
+
   // 2. 处理显示URL（匹配映射表，无匹配则用原路径）
   const mappedPath = pathMapping[currentUrl.pathname] || currentUrl.pathname;
   const cleanDisplayUrl = `${currentUrl.protocol}//${currentUrl.host}${mappedPath}`;
@@ -106,7 +103,7 @@ watch(
   () => {
     setTimeout(updateArticleUrl, 100); // 延迟确保窗口信息同步
   },
-  { immediate: true } // 初始时立即执行一次
+  { immediate: true }, // 初始时立即执行一次
 );
 </script>
 
@@ -126,7 +123,9 @@ watch(
 .copyright-card:hover {
   border-color: var(--vp-c-tip-1);
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px #217af41f, 0 0 0 1px var(--vp-c-brand);
+  box-shadow:
+    0 4px 12px #217af41f,
+    0 0 0 1px var(--vp-c-brand);
 }
 
 /* 右上角图标定位 */

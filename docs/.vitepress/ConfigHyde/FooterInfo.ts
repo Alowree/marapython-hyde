@@ -37,7 +37,7 @@ export const FooterInfo = {
 
     <a href="https://analytics.google.com/" target="_blank" style="display:flex;align-items:center;justify-content:center;"> |<img src="//www.gstatic.com/analytics-suite/header/suite/v2/ic_analytics.svg" style="width:16px;height:16px;" alt="Google Analytics">Google Analytics 提供数据统计服务</a>`,
     `<span id="runtime"></span>(●'◡'●)`,
-    "人心中的成见是一座大山~",
+    "Talk is Cheap, Show Me Your Data!",
   ],
   copyright: {
     createYear: 2020,

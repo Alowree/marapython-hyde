@@ -86,10 +86,7 @@ export const HeadData = [
   ["meta", { name: "description", description }],
   ["meta", { name: "keywords", description }],
   ["meta", { name: "baidu-site-verification", content: "codeva-QnY1Xh758j" }], // 百度收录
-  [
-    "meta",
-    { name: "msvalidate.01", content: "48CABE70F538B8D117567176ABF325AF" },
-  ], // Bing 收录验证
+  ["meta", { name: "msvalidate.01", content: "48CABE70F538B8D117567176ABF325AF" }], // Bing 收录验证
   ["meta", { name: "algolia-site-verification", content: "E29EEBB136FD597D" }], // Algolia 站点验证 2026-06-12 marapython.com
   [
     "meta",
@@ -108,12 +105,9 @@ export const HeadData = [
   // 图标
   ["link", { rel: "icon", href: "/favicon.ico", type: "image/x-icon" }],
   // 作者信息
-  ["meta", { name: "author", content: "Alowree" }],
+  ["meta", { name: "author", content: "Alowree XU" }],
   // 版权声明
-  [
-    "meta",
-    { name: "copyright", content: "© 2026 MaraPython. All Rights Reserved." },
-  ],
+  ["meta", { name: "copyright", content: "© 2026 MaraPython. All Rights Reserved." }],
   // 规范网址，告诉搜索引擎站点的首选域名
   // remove hardcoded canonical URL that pointed all pages to homepage
   // ["link", { rel: "canonical", href: "https://marapython.com/" }],
@@ -168,11 +162,7 @@ export const HeadData = [
   ],
   ...share,
   ...weChatShare,
-  [
-    "noscript",
-    {},
-    '<meta http-equiv="refresh" content="0; url={https://www.baidu.com/}">',
-  ], // 禁用js跳转
+  ["noscript", {}, '<meta http-equiv="refresh" content="0; url={https://www.baidu.com/}">'], // 禁用js跳转
   [
     "script",
     { type: "application/ld+json" },

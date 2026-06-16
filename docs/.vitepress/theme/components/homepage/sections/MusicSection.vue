@@ -1,15 +1,17 @@
 <template>
-  <div class="author-content-item like-music"
-       style="background:url(https://blog.strarry.top/static/music.jpg) top/cover no-repeat">
+  <div
+    class="author-content-item like-music"
+    style="background: url(https://blog.strarry.top/static/music.jpg) top/cover no-repeat"
+  >
     <div class="card-content">
       <div class="author-content-item-tips">音乐偏好</div>
-      <span class="author-content-item-title">周杰伦、孙燕姿、华语流行</span>
+      <span class="author-content-item-title">Pink Floyd、Scorpions、兰卡措、张玮伽</span>
       <div class="content-bottom">
-        <div class="tips">跟 Hyde 一起欣赏更多音乐</div>
+        <div class="tips">跟 Alowree 一起欣赏更多音乐</div>
       </div>
       <div class="banner-button-group">
-        <a class="banner-button" onclick="pjax.loadUrl('/music')">
-          <i class="anzhiyufont anzhiyu-icon-arrow-circle-right"></i> 
+        <a class="banner-button" onclick="pjax.loadUrl(&quot;/music&quot;);">
+          <i class="anzhiyufont anzhiyu-icon-arrow-circle-right"></i>
           <span class="banner-button-text">更多推荐</span>
         </a>
       </div>
@@ -48,7 +50,7 @@
   -webkit-box-shadow: 0 -69px 203px 11px #453e38 inset;
   box-shadow: 0 -69px 203px 11px #453e38 inset;
   position: absolute;
-  content: '';
+  content: "";
   width: 100%;
   height: 100%;
   top: 0;
@@ -108,7 +110,7 @@
   display: inline-flex;
   align-items: center;
   z-index: 1;
-  transition: .3s;
+  transition: 0.3s;
   cursor: pointer;
   border-bottom: 0 !important;
   backdrop-filter: saturate(180%) blur(20px);
@@ -150,24 +152,25 @@
     width: 100% !important;
     min-height: 400px;
   }
-  
+
   .card-content {
     padding: 1rem;
     min-height: 400px;
   }
-  
+
   .author-content-item-title {
     font-size: 36px;
   }
-  
+
   .banner-button {
     padding: 6px 12px;
     font-size: 11px;
   }
-  
+
   .banner-button i,
   .banner-button-text {
     font-size: 11px;
   }
 }
 </style>
+
