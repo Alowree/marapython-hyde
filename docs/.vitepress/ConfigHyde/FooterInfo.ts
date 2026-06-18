@@ -7,7 +7,7 @@ export const FooterInfo = {
 
     `<a target="_blank" href="https://cn.vitejs.dev/" title="本站使用Vite构建服务 Vite"><img alt="Vite" src="https://img.shields.io/badge/zsr-Vite-blue?logo=vite&label=Build"></a>
 
-    <a target="_blank" href="https://vitepress.dev/" title="本站框架基于 VitePress_v1.6.3" ><img alt="VitePress" src="https://img.shields.io/badge/Frame-VitePress-4868C2?logo=vitepress&amp;logoColor=fff" ></a>
+    <a target="_blank" href="https://vitepress.dev/" title="本站框架基于 VitePress_v1.6.4" ><img alt="VitePress" src="https://img.shields.io/badge/Frame-VitePress-4868C2?logo=vitepress&amp;logoColor=fff" ></a>
     
     <a target="_blank" href="https://twikoo.js.org/" title="本站评论系统使用 Twikoo" ><img alt="Twikoo" src="https://img.shields.io/badge/Comments-Twikoo-0072F9"></a>
 
@@ -19,11 +19,7 @@ export const FooterInfo = {
 
     <a target="_blank" href="https://51.la/" title="本站统计服务使用 51.LA"><img alt="51.LA" src="https://img.shields.io/badge/51.LA-000000?logo=51.LA&label=Count&color=%23FF6A00"></a>
 
-    <a target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="本站内容采用 CC BY-NC-SA 4.0 国际许可协议进行许可"><img alt="Copyright" src="https://img.shields.io/badge/Copyright-BY--NC--SA%204.0-d42328?logo=coursera&amp;logoColor=fff"></a>
-
-    <a target="_blank" href="https://www.aliyun.com/" title="本站部署服务使用 Aliyun"><img alt="Aliyun" src="https://img.shields.io/badge/Alibaba-Cloud?logo=alibabacloud&label=Server&color=%23FF6A00"></a>
-
-    <a target="_blank" href="https://nginx.org/" title="本站Nginx反向代理服务 Nginx"><img alt="Nginx" src="https://img.shields.io/badge/Nginx-Proxy?logo=Nginx&label=Proxy"></a>`,
+    <a target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="本站内容采用 CC BY-NC-SA 4.0 国际许可协议进行许可"><img alt="Copyright" src="https://img.shields.io/badge/Copyright-BY--NC--SA%204.0-d42328?logo=coursera&amp;logoColor=fff"></a>`,
   ],
   theme: {
     name: `Theme By Teek@${version}-2026-04-28`,

@@ -77,8 +77,8 @@ const teekBlogCommonConfig: TeekConfig = {
     readingTime: true,
     statistics: {
       provider: "busuanzi", //是否开启首页的访问量和排名统计，仅当 provider 存在生效
-      // siteView: true, //是否开启文章页的浏览量统计，仅当 provider 存在生效
-      // pageView: true, //如果请求不蒜子接口失败，是否重试，类型 boolean
+      siteView: true, //是否开启文章页的浏览量统计，仅当 provider 存在生效
+      pageView: true, //如果请求不蒜子接口失败，是否重试，类型 boolean
       // tryRequest: false, //重试次数，仅当 tryRequest 为 true 时有效
       // tryCount: 2000, //重试间隔时间，单位毫秒，仅当 tryRequest 为 true 时有效目录链接
     },

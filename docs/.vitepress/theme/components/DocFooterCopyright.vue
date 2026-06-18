@@ -20,7 +20,7 @@
     </p>
     <p class="copyright-item">
       <TkIcon :icon="iconMap.copyrightIcon" />
-      版权声明：本博客所有文章除特别声明外，均采用
+      版权声明：除非特别声明，本站所有文章均采用
       <a
         href="https://creativecommons.org/licenses/by-nc-sa/4.0/"
         target="_blank"
@@ -31,7 +31,6 @@
       </a>
       许可协议。转载请注明来自&nbsp;
       <a :href="authorLink" class="author-link">{{ site_name }}</a>
-      ，谢谢合作。
     </p>
   </div>
 </template>

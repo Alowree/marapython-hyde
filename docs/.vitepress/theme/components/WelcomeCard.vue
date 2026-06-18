@@ -20,8 +20,7 @@
       <div class="ip-section" v-if="ipData">
         <div class="ip-header">
           <span class="ip-location"
-            >欢迎来自<span class="red-text"> {{ getLocationText() }} </span
-            >的朋友💖</span
+            >欢迎来自<span class="red-text"> {{ getLocationText() }} </span>的朋友💖</span
           >
         </div>
         <div class="ip-info">
@@ -45,8 +44,7 @@
         <div class="weather-header">
           <span class="weather-icon">🌤️</span>
           <span class="weather-location"
-            >{{ weatherData.province }} {{ weatherData.city }}
-            {{ weatherData.district }}</span
+            >{{ weatherData.province }} {{ weatherData.city }} {{ weatherData.district }}</span
           >
         </div>
         <div class="weather-info">
@@ -55,16 +53,11 @@
             <span class="weather-desc">{{ weatherData.weather }}</span>
           </div>
           <div class="weather-details">
-            <span
-              >{{ weatherData.wind_direction }}
-              {{ weatherData.wind_power }}</span
-            >
+            <span>{{ weatherData.wind_direction }} {{ weatherData.wind_power }}</span>
             <span>湿度 {{ weatherData.humidity }}%</span>
           </div>
         </div>
-        <div class="weather-update">
-          最后更新: {{ weatherData.update_time }}
-        </div>
+        <div class="weather-update">最后更新: {{ weatherData.update_time }}</div>
       </div>
     </div>
   </TkPageCard>
@@ -115,10 +108,10 @@ const distance = ref<string>("");
 
 // 公告内容
 const noticeContent: NoticeContent = {
-  title: "📢 欢迎来访者",
+  title: "📢 欢迎访问 MaraPython",
   subtitle: "👋🏻 Hi，我是 Alowree，欢迎您！",
   content: "❓ 如有问题欢迎评论区交流！",
-  error: "😫 页面异常？尝试 Ctrl+F5",
+  error: "😫 页面异常？尝试 Ctrl + F5",
   email:
     '📧 如需联系我：<a href="mailto:alowree@gmail.com" style="color: var(--vp-c-brand-1);">发送邮件🚀</a>',
 };
