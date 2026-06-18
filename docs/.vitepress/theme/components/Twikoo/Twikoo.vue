@@ -64,9 +64,10 @@ onMounted(() => {
   <div class="comment-container vp-raw">
     <!-- Twikoo -->
     <div id="twikoo"></div>
+    <!-- src="https://s4.zstatic.net/npm/twikoo@1.6.44/dist/twikoo.nocss.js" -->
     <component
       :is="'script'"
-      src="https://s4.zstatic.net/npm/twikoo@1.6.44/dist/twikoo.nocss.js"
+      src="https://s4.zstatic.net/npm/twikoo@1.7.11/dist/twikoo.nocss.js"
       crossorigin="anonymous"
       ref="twikooJs"
     ></component>
@@ -80,4 +81,3 @@ onMounted(() => {
 @import "./twikoo.scss";
 /*Twikoo官方本地样式 */
 </style>
-
